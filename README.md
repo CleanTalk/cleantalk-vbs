@@ -8,6 +8,10 @@ This project demonstrates how to use the Cleantalk API with VBScript to validate
 
    2. Obtain the access key from the CleanTalk account https://cleantalk.org/help/add-website
 
+### Websites that trust CleanTalk!
+
+![CleanTalk Anti-Spam Rating](https://cleantalk.org/webpack/img/cleantalk_rating.png)
+
 ## Usage
 
 1. **Place the code of [Cleantalk class](https://github.com/alexandergull/cleantalk-vbs/blob/master/cleantalk_example.vbs#L3) in your VBScript file.**
