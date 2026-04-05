@@ -2,6 +2,8 @@
 
 This project demonstrates how to use the Cleantalk API with VBScript to validate registrations.
 
+If you find this project useful, please consider starring ⭐ it on GitHub — it helps us grow and support development!
+
 ## Requirements
 
    1. Register a Cleantalk account https://cleantalk.org/register?product=anti-spam
