@@ -14,6 +14,7 @@ class CleantalkClass
      private submit_time
      private request_json
      private event_token
+     private event_token_enabled
      private response_json
      private verdict_allowed
      private verdict_account_status
@@ -35,6 +36,8 @@ class CleantalkClass
           method_name="check_newuser"
           js_on=1
           submit_time=5
+          event_token=""
+          event_token_enabled=Null
      End Sub
 
      ' default constructor on init
@@ -69,6 +72,7 @@ class CleantalkClass
 
      public Sub setFormEventToken(pFormEventToken)
           event_token=pFormEventToken
+          event_token_enabled=True
      End Sub
 
      ' Getters
@@ -92,7 +96,16 @@ class CleantalkClass
      ' Construct JSON data
 
      private sub constructJSONData()
-          request_json = "{""auth_key"":""" & auth_key & """,""agent"":""" & agent & """,""method_name"":""" & method_name & """,""sender_email"":""" & user_email & """,""sender_ip"":""" & user_ip & """,""sender_nickname"":""" & user_name & """,""js_on"":""" & js_on & """,""submit_time"":""" & submit_time & """, ""event_token"":""" & event_token & """}"
+          Dim event_token_enabled_value
+
+          ' Convert event_token_enabled to proper JSON format
+          if IsNull(event_token_enabled) then
+               event_token_enabled_value = "null"
+          else
+               event_token_enabled_value = LCase(CStr(event_token_enabled))
+          end if
+
+          request_json = "{""auth_key"":""" & auth_key & """,""agent"":""" & agent & """,""method_name"":""" & method_name & """,""sender_email"":""" & user_email & """,""sender_ip"":""" & user_ip & """,""sender_nickname"":""" & user_name & """,""js_on"":""" & js_on & """,""submit_time"":""" & submit_time & """, ""event_token"":""" & event_token & """, ""event_token_enabled"":" & event_token_enabled_value & "}"
      end sub
 
      ' Send request to API
